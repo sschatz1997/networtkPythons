@@ -2,7 +2,7 @@ import time
 from time import sleep
 import os
 
-os.system("ping -c 3 8.8.8.8 >> pingresults.txt")
+os.system("ping -c 3 8.8.8.8 > pingresults.txt")
 
 time.sleep(15)
 statinfo = os.stat('pingresults.txt')
