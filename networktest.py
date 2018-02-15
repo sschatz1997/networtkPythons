@@ -12,7 +12,6 @@ state = 'false'
 while state  != 'true':
 	if  statinfo.st_size < 200:
 		print("network is down")
-		os.system("rm pingresults.txt")
 		state = 'false'
 		os.system("service network restart")
 		time.sleep(2)
