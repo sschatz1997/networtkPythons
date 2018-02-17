@@ -8,17 +8,17 @@ if linuxV == "ubuntu":#they both use ifconfig
 	linuxV = "debian"
 if linuxV == "debian9": 
 	ipset = 'D9'
-else:
-	ipset = 'ifconfig eth0 >> /test/infconfig.txt'
+if linuxV == "debian" or linuxV == "ubuntu":
+	ipset = "ifconfig eth0 > infconfig.txt"
 
 os.system("sudo ping -c 3 8.8.8.8 > pingresults.txt")
 
 
-os.system("ifconfig eth0  > /test/ifconfig.txt")	
-config = os.stat('/test/ifconfig.txt')
+os.system("ifconfig eth0  > ifconfig.txt")	
+config = os.stat('ifconfig.txt')
 counter = 0 
 time.sleep(15)
-statinfo = os.stat('/test/pingresults.txt')
+statinfo = os.stat('pingresults.txt')
 state = 'false'
 
 while (state  != 'true') and (counter < 3):
