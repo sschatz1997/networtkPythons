@@ -1,7 +1,7 @@
 import time
 import os
 
-userinput = input("What linux distro are you using?  ")
+userinput = input("What linux distro are you using? ")
 linuxversion = str.lower(userinput)
 
 if linuxversion == "debian":
