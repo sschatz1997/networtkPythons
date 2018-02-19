@@ -2,19 +2,15 @@ import time
 from time import sleep
 import os
 
-linuxV = "DISTRO"#this is changed by setup.py
+linuxV = "DISTRO"#replaced with setup.py
 
-if linuxV == "ubuntu":#they both use ifconfig
-	linuxV = "debian"
-if linuxV == "debian9": 
-	ipset = 'D9'
-if linuxV == "debian" or linuxV == "ubuntu":
-	ipset = "ifconfig eth0 > infconfig.txt"
+if linuxV == "ubuntu" or linuxV == "debian":
+	os.system("ifconfig INTRF > ifconfig.txt")	
+if linuxV == "debian9":
+	os.system("ip show INTRF > ifconfig.txt")#INTRF is replaced by setup.py
 
 os.system("sudo ping -c 3 8.8.8.8 > pingresults.txt")
 
-
-os.system("ifconfig eth0  > ifconfig.txt")	
 config = os.stat('ifconfig.txt')
 counter = 0 
 time.sleep(15)
@@ -39,4 +35,4 @@ while (state  != 'true') and (counter < 3):
 	if counter == 3:
 		print("network can't be restarted")	 
 
-os.system("date >> pingresults.txt")
+os.system("date > pingresults.txt")
