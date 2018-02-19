@@ -35,4 +35,4 @@ while (state  != 'true') and (counter < 3):
 	if counter == 3:
 		print("network can't be restarted")	 
 
-os.system("date > pingresults.txt")
+os.system("date >> pingresults.txt")
