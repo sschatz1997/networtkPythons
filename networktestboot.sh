@@ -2,9 +2,7 @@
 # /etc/init.d/
 
 sleep 20
+xfce4-terminal -e 'sh -ic "python3 networktest.py"' -H
 
-echo "Starting network script"
-
-python3 /networktest.py
 
 exit 1
