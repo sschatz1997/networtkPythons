@@ -7,7 +7,7 @@ linuxV = "DISTRO"#replaced with setup.py
 if linuxV == "ubuntu" or linuxV == "debian":
 	os.system("ifconfig INTRF > ifconfig.txt")	
 if linuxV == "debian9":
-	os.system("ip show INTRF > ifconfig.txt")#INTRF is replaced by setup.py
+	os.system("ip -s link show INTRF > ifconfig.txt")#INTRF is replaced by setup.py
 
 os.system("sudo ping -c 3 8.8.8.8 > pingresults.txt")
 
